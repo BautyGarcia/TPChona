@@ -29,7 +29,7 @@ contract Colegio {
 
 
     //Devuelve el nombre completo del alumno
-    function name() public view returns (string memory) {
+    function nombre_completo() public view returns (string memory) {
         return AppendString(_nombre, " ", _apellido);
     }
 
