@@ -23,7 +23,7 @@ contract Colegio {
         return _apellido;
     }
 
-    function AppendString(string memory a, string memory b, string memory c) pure returns (string memory) {
+    function AppendString(string memory a, string memory b, string memory c) public pure returns (string memory) {
         return string(abi.encodePacked(a,b,c));
     }
 
