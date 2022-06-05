@@ -42,6 +42,7 @@ contract Colegio {
     //Le permite AL DOCENTE poner la nota a una cierta materia
     function set_nota_materia(uint _nota, string memory _materia) public {
         require(_docente == msg.sender, "No Podes cambiar tu nota panflin");
+        require(_nota <= 100 && _nota >= 1, "No es una nota valida");
         notas_materia[_materia] = _nota;
         _nom_materias.push(_materia);
     }
