@@ -65,6 +65,7 @@ contract Colegio {
     function set_nota_materia(uint _nota, string memory _materia, uint _bimestre) public {
         
         require(_docente == msg.sender || checkIfDocenteIsOk(msg.sender) == true, "No Podes cambiar tu nota panflin");
+        require(_nota <= 100 && _nota >= 1, "No es una nota valida");
         require(_bimestre < 5, "No es un numero valido para bimestre");
         require(_bimestre > 0, "No es un numero valido para bimestre");
         notas_materia[_materia][_bimestre] = _nota;
