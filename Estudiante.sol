@@ -8,7 +8,7 @@ contract Colegio {
     string private _apellido;
     string private _curso;
     address private _docente;
-    mapping (string => uint) private notas_materia;
+    mapping (string => uint8) private notas_materia;
     string[] private _nom_materias;
 
     //Creo el constructor con las variables que pide
@@ -40,7 +40,7 @@ contract Colegio {
     }
 
     //Le permite AL DOCENTE poner la nota a una cierta materia
-    function set_nota_materia(uint _nota, string memory _materia) public {
+    function set_nota_materia(uint8 _nota, string memory _materia) public {
         require(_docente == msg.sender, "No Podes cambiar tu nota panflin");
         require(_nota <= 100 && _nota >= 1, "No es una nota valida");
         notas_materia[_materia] = _nota;
