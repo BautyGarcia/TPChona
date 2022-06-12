@@ -12,7 +12,7 @@ a. Se podria modificar el mapping de las notas y hacer un mapping de otro mappin
 
 b. Creando un array de docentes autorizados y una funcion de agregarDocente(). En esta funcion se verifica que el que este agregando un docente este autorizado y se agregue. Cuando se necesite hacer algo donde un docente tiene que estar autorizado, checkee si la adress del msg.sender pertenezca al array de docentes con la funcion CheckIfDocenteIsOk().
 
-c. Usando el evento "Deposit", cuando un docente determina una nota en la funcion set_nota_materia(), se hace un deposit con la adress del docente, el nombrede la materia como id, para que este sea unico, y como uint value la nota correspondiente. Despues hacer un emit de ese deposit para confirmar la creacion del transaction log en la blockchain. 
+c. Creando un evento "Deposit", despues una funcion de deposit() que pida la materia y la nota. Cuando un docente determina una nota en la funcion set_nota_materia(), se hace un emit a deposit() con la address del docente que hace el emit.
 
 -------------------------------------
 
