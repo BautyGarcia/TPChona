@@ -21,6 +21,14 @@ contract Colegio {
         _docente = msg.sender;
     }
 
+    //Creamos el evenot Deposit
+    event Deposit(address indexed _from, string _materia, uint _nota);
+
+    //Funcion para poder confirmar este evento
+    function deposit(string memory _materia, uint _nota) public payable {      
+        emit Deposit(msg.sender, _materia, _nota);
+    }
+
     //Devuelve el apellido del alumno
     function apellido() public view returns (string memory) {
         return _apellido;
@@ -71,6 +79,8 @@ contract Colegio {
         notas_materia[_materia][_bimestre] = _nota;
         _nom_materias.push(_materia);
         _bimestres.push(_bimestre);
+
+        deposit(_materia, _nota);
     }
 
     //Devuelve la nota en base a la materia
