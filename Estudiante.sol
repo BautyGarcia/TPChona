@@ -1,3 +1,4 @@
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
@@ -55,8 +56,11 @@ contract Colegio {
     
     //Se fija si la nota de una cierta materia es mayor o igual a 60(6/10), devuelve true o false
     function aprobo(string memory _materia) public view returns (bool) {
-        require (notas_materia[_materia] >= 60);
-        return true;
+        if (notas_materia[_materia] >= 60){
+            return true;
+        } else {
+            return false;
+        }
        
     }
 
